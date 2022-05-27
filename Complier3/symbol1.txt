@@ -1,0 +1,2 @@
+x t_integer
+y t_integer

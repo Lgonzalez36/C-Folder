@@ -1,0 +1,9 @@
+1, 1, mary, smith, msmith@abc.edu, 1, 3, cough, shortness of breath or difficulty breathing, headache, 1, 1, 1, 2, 1, 3, "10/15/2020", 1, 100, 0, 2, 4, 5, 0
+2, 2, mary, doe, mdoe@abc.edu, 1, 1, nausea or vomiting, 1, 2, "10/17/2020", 1, 130, 0, 1, 4, 0
+3, 3, john, doe, jdoe@abc.edu, 1, 2, congestion or runny nose, sore throat, 1, 1, 3, 5, "09/20/2020", 0, 204, 0, 0, 1
+4, 4, john, smith, jsmith@abc.edu, 0, 0, "", -1, -1, 2, 1, 2, 0, 0
+5, 5, tom, smith, tsmith@abc.edu, 1, 3, fatigue, cough, headache, 1, 1, 1, 2, 4, 2, "10/20/2020", 1, 100, 1, 1, 1, 6, 0
+6, 6, sally, smith, ssmith@abc.edu, 0, 0, "", -1, -1, 1, 5, 0, 0
+7, 7, tom, doe, tdoe@abc.edu, 1, 1, cough, 1, 3, "08/20/2020", 1, 210, 0, 1, 8, 1
+8, 8, pam, smith, psmith@abc.edu, 1, 1, sore throat, 1, 2, "08/21/2020", 1, 210, 1, 7, 0, 1
+9, 8, pam, smith, psmith@abc.edu, 1, 1, fever or chills, 1, 4, "09/25/2020", 0, 101, 0, 0, 1
