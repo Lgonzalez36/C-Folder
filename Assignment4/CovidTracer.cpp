@@ -1,8 +1,11 @@
-/*
- * author: Luis gonzalez
- * 11/04/2020
- * CSCE 306
- */
+
+//============================================================================
+// Name        : Assignment4.cpp
+// Author      : Luis Gonzalez
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Covid Tracker in C++, Ansi-style
+//============================================================================
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -11,123 +14,8 @@
 #include <bits/stdc++.h>
 #include <algorithm>
 #include <iomanip>
+
 using namespace std;
-class Date{
-private:
-	int _m, _d, _y;
-	void convert(string s){
-	char x[5];
-	x[0] = s[1];   x[1] = s[2];  x[2] = '\0';
-	_m = atoi(x);
-	x[0] = s[4];   x[1] = s[5];  x[2] = '\0';
-	_d = atoi(x);
-	x[0] = s[7];   x[1] = s[8];  x[2] = s[9];
-	x[3] = s[10]; x[4] = '\0';
-	_y = atoi(x);
-	}
-	string convert2(){
-	string tm = "", td = "", ty = "";
-	// char t[10];
-	if (_m <= 9)
-	tm = tm + "0" + to_string(_m);
-	else
-	tm = to_string(_m);
-	if (_d <= 9)
-	td = td + "0" + to_string(_d);
-	else
-	td = to_string(_d);
-	ty = to_string(_y);
-	return tm + "/" + td + "/" + ty;
-	}
-	char* convert3(){
-	string t = convert2();
-	char* c = new char[t.length()+1];
-	strcpy(c, t.c_str());
-	return c;
-	}
-public:
-	Date():_m(1), _d(1), _y(2020){}
-	Date(int m, int d, int y){
-	_m = m;
-	_d = d;
-	_y = y;
-	}
-	Date(string s){
-	cout << "in string type conversion function" << endl;
-	cout << " STRING:" << s << endl;
-	convert(s);
-	}
-
-	int getM()const {return _m;}
-	int getD()const {return _d;}
-	int getY()const {return _y;}
-	void setD(int x){_d = x;}
-	void setM(int x){_m = x;}
-	void setY(int x){_y = x;}
-	void print(){
-		cout << _m << " " << _d << " " << _y << endl;
-	}
-	Date operator+(int b){ //ok
-		cout << "in operator+ (int) " << endl;
-		Date t = *this;
-		t._d = t._d + b;
-		return t;
-	}
-	const Date& operator++(){ //ok
-		cout << "in prefix operator ++" << endl;
-		_d = _d + 1;
-		return *this;
-	}
-	const Date operator++(int){
-		cout << "in postfix operator ++" << endl;
-		Date t = *this;
-		_d = _d + 1;
-		return t;
-	}
-	int operator[](int x){
-		// pre: parameter must be 0, 1, or 2
-		// post: corresponding month, day, year, -1 returned if error. Has significant code so make a private functions
-		if (x == 0) return _m;
-		if (x == 1) return _d;
-		if (x == 2) return _y;
-		return -1;
-	}
-	void operator()(string s){
-		cout << "in operator ()" << endl;
-		convert(s);
-	}
-	int operator()(int x){
-		// pre: parameter must be 0, 1, or 2
-		// post: corresponding month, day, year, -1 returned if error. Has significant code so make a private functions
-		if (x == 0) return _m;
-		if (x == 1) return _d;
-		if (x == 2) return _y;
-		return -1;
-	}
-	operator string(){
-		cout << "in the string type conversion operator" << endl;
-		return convert2();
-	}
-
-	operator char*(){
-		cout << "char* type conversion operator" << endl;
-		return convert3();
-	}
-	const Date& operator=( string b){
-		convert(b);
-		return *this;
-	}
-};
-ostream& operator<<(ostream& out, const Date& b){
-	out << b.getM() << " " << b.getD() << " " << b.getY() << endl;
-	return out;
-}
-Date operator+(int x, const Date& b){
-	cout << "in operator+ (int, Date) " << endl;
-	Date t = b;
-	t.setD(t.getD() + x);
-	return t;
-}
 class Person{
 private:
 	int _pid;
